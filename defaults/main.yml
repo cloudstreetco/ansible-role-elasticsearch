@@ -1,5 +1,8 @@
 ---
 elasticsearch_network_host: localhost
 elasticsearch_http_port: 9200
+elasticsearch_data_path: /var/log/elasticsearch/data
+elasticsearch_logs_path: /var/log/elasticsearch/logs
+elasticsearch_script_enabled: false
 elasticsearch_script_inline: true
 elasticsearch_script_indexed: true

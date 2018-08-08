@@ -31,11 +31,11 @@
 #
 # Path to directory where to store the data (separate multiple locations by comma):
 #
-# path.data: /path/to/data
+path.data: {{ elasticsearch_data_path }}
 #
 # Path to log files:
 #
-# path.logs: /path/to/logs
+path.logs: {{ elasticsearch_logs_path }}
 #
 # ----------------------------------- Memory -----------------------------------
 #
@@ -93,5 +93,7 @@ http.port: {{ elasticsearch_http_port }}
 # Require explicit names when deleting indices:
 #
 # action.destructive_requires_name: true
+{% if elasticsearch_script_enabled is defined and elasticsearch_script_enabled == true %}
 script.inline: {{ elasticsearch_script_inline }}
 script.indexed: {{ elasticsearch_script_indexed }}
+{% endif %}
